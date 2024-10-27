@@ -1,0 +1,33 @@
+﻿@model mvc_app.Models.Product
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Product Details";
+}
+
+<div class="container mt-4">
+    <h2 class="mb-4 text-center">Product Details</h2>
+    <div class="card shadow-sm">
+        <div class="card-header text-white bg-primary">
+            <h5 class="mb-0">Product ID: @Model.Id</h5>
+        </div>
+        <div class="card-body">
+            <div class="row mb-3">
+                <div class="col-md-3 font-weight-bold">Name:</div>
+                <div class="col-md-9">@Model.Name</div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-3 font-weight-bold">Price:</div>
+                <div class="col-md-9">$@Model.Price</div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-3 font-weight-bold">Description:</div>
+                <div class="col-md-9">@Model.Description</div>
+            </div>
+        </div>
+        <div class="card-footer text-center">
+            <a href="@Url.Action("Index", "Products")" class="btn btn-secondary">Back to List</a>
+            <a href="@Url.Action("Update", "Products", new { id = Model.Id })" class="btn btn-warning text-white">Edit</a>
+            <a href="@Url.Action("Delete", "Products", new { id = Model.Id })" class="btn btn-danger">Delete</a>
+        </div>
+    </div>
+</div>

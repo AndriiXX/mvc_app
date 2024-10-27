@@ -1,0 +1,24 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Delete Product";
+}
+
+<div class="container mt-5">
+    <h2>Delete Product</h2>
+    <form asp-controller="Products" asp-action="Delete" method="post" class="bg-light p-4 rounded shadow">
+        <div class="card-body">
+        <div class="form-group">
+            <label for="Id" class="form-label"></label>
+            <input for="Id" class="form-control" placeholder="Enter product ID" />
+            <span validation-for="Id" class="text-danger"></span>
+        </div>
+        <div class="mt-3">
+            <button type="submit" class="btn btn-danger">Delete</button>
+            <a asp-action="Index" class="btn btn-secondary ms-2">Cancel</a>
+        </div>
+        </div>
+    </form>
+</div>
+
+
